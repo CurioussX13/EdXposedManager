@@ -9,9 +9,10 @@ android {
 
     defaultConfig {
         applicationId "org.meowcat.edxposed.manager"
-        minSdkVersion 24
+        minSdkVersion 26
         //noinspection OldTargetApi
-        targetSdkVersion 28
+        resConfigs "en"
+        targetSdkVersion 29
         versionCode 45401
         versionName "4.5.4"
         //noinspection GroovyAccessibility
@@ -21,6 +22,9 @@ android {
     buildTypes {
         release {
             zipAlignEnabled true
+            minifyEnabled true
+            shrinkResources true 
+            
         }
         debug {
             zipAlignEnabled true
