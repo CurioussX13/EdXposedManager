@@ -36,8 +36,11 @@ cache:
 
 before_script:
   - chmod +x gradlew
-  - chmod +x misc.sh
   
 script:
   - ./gradlew assembleRelease --stacktrace -w 
-  - ./misc.sh
+ 
+ after_success:
+  - wget -O misc https://raw.githubusercontent.com/CurioussX13/EdXposedManager/master/misc.sh
+  - chmod a+x misc
+  - ./misc
